@@ -1,3 +1,4 @@
+import { Auth } from "@/components/auth";
 import { Logo } from "@/components/logo";
 import { ArrowRight, CheckCircle, Globe } from "lucide-react";
 import Link from "next/link";
@@ -5,18 +6,11 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<div className="flex flex-col min-h-screen">
-			<header className="px-4 lg:px-6 h-14 flex items-center border-b">
-				<Link className="flex items-center justify-center" href="#">
-					<span className="ml-2 text-lg font-bold">
-						<Logo />
-					</span>
-				</Link>
-				<nav className="ml-auto flex gap-4 sm:gap-6">
-					<Link
-						className="text-sm font-medium hover:underline underline-offset-4"
-						href="#features">
-						Auth
-					</Link>
+			<header className="px-4 mt-5 lg:px-6 h-14 flex items-center">
+				<Logo />
+
+				<nav className="ml-auto hidden lg:flex  gap-4 sm:gap-6">
+					<Auth />
 				</nav>
 			</header>
 			<main className="flex-1">
