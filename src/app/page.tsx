@@ -1,101 +1,153 @@
-import Image from "next/image";
+import { ArrowRight, CheckCircle, Globe } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	return (
+		<div className="flex flex-col min-h-screen">
+			<header className="px-4 lg:px-6 h-14 flex items-center border-b">
+				<Link className="flex items-center justify-center" href="#">
+					<span className="ml-2 text-lg font-bold">Logo</span>
+				</Link>
+				<nav className="ml-auto flex gap-4 sm:gap-6">
+					<Link
+						className="text-sm font-medium hover:underline underline-offset-4"
+						href="#features">
+						Auth
+					</Link>
+				</nav>
+			</header>
+			<main className="flex-1">
+				<section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-white to-gray-100">
+					<div className="container px-4 md:px-6 mx-auto">
+						<div className="flex flex-col items-center space-y-4 text-center">
+							<div className="space-y-2">
+								<h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+									Ultimate AI Content Generator
+								</h1>
+								<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+									Our plattform offers a suite of powerful tools to help you
+									generate social media contents with the power of AI.
+								</p>
+							</div>
+							<div className="space-x-4">
+								<button className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-blue-600 text-white hover:bg-blue-700 h-10 py-2 px-4">
+									Get Started
+								</button>
+								<button className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-gray-100 h-10 py-2 px-4">
+									Learn More
+								</button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="features" className="w-full py-12 md:py-24 lg:py-32">
+					<div className="container px-4 md:px-6 mx-auto">
+						<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+							Our Features
+						</h2>
+						<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+							<div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md">
+								<CheckCircle className="w-12 h-12 mb-4 text-blue-600" />
+								<h3 className="text-xl font-bold mb-2">Easy to Use</h3>
+								<p>
+									Our intuitive interface makes it simple for anyone to get
+									started and be productive from day one.
+								</p>
+							</div>
+							<div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md">
+								<Globe className="w-12 h-12 mb-4 text-blue-600" />
+								<h3 className="text-xl font-bold mb-2">Global Reach</h3>
+								<p>
+									Connect with users and businesses from around the world,
+									expanding your market effortlessly.
+								</p>
+							</div>
+							<div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md">
+								<ArrowRight className="w-12 h-12 mb-4 text-blue-600" />
+								<h3 className="text-xl font-bold mb-2">Scalable Solution</h3>
+								<p>
+									Grow your business with our scalable infrastructure that
+									adapts to your needs as you expand.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section
+					id="about"
+					className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+					<div className="container px-4 md:px-6 mx-auto">
+						<div className="grid gap-10 lg:grid-cols-2">
+							<div className="space-y-4">
+								<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+									About StartupX
+								</h2>
+								<p className="text-gray-500">
+									StartupX was founded with a vision to empower businesses of
+									all sizes. Our team of experts is dedicated to creating
+									innovative solutions that drive growth and efficiency.
+								</p>
+							</div>
+							<div className="space-y-4">
+								<h3 className="text-xl font-bold">Our Mission</h3>
+								<p className="text-gray-500">
+									To provide cutting-edge technology solutions that enable
+									businesses to thrive in the digital age, fostering innovation
+									and sustainable growth.
+								</p>
+								<button className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-gray-100 h-10 py-2 px-4">
+									Learn More About Us
+								</button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+					<div className="container px-4 md:px-6 mx-auto">
+						<div className="flex flex-col items-center space-y-4 text-center">
+							<div className="space-y-2">
+								<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+									Get in Touch
+								</h2>
+								<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl">
+									Have questions or want to learn more? We're here to help.
+									Reach out to our team today.
+								</p>
+							</div>
+							<div className="w-full max-w-sm space-y-2">
+								<form className="flex flex-col space-y-4">
+									<input
+										className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+										placeholder="Your email"
+										type="email"
+									/>
+									<textarea
+										className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+										placeholder="Your message"></textarea>
+									<button
+										type="submit"
+										className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-blue-600 text-white hover:bg-blue-700 h-10 py-2 px-4">
+										Send Message
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+				<p className="text-xs text-gray-500">
+					© 2024 StartupX Inc. All rights reserved.
+				</p>
+				<nav className="sm:ml-auto flex gap-4 sm:gap-6">
+					<Link className="text-xs hover:underline underline-offset-4" href="#">
+						Terms of Service
+					</Link>
+					<Link className="text-xs hover:underline underline-offset-4" href="#">
+						Privacy Policy
+					</Link>
+				</nav>
+			</footer>
+		</div>
+	);
 }
