@@ -13,7 +13,7 @@ const museo = MuseoModerno({
 export const Logo = () => {
 	return (
 		<div>
-			<Link href="/" className="flex flex-col items-start">
+			<Link href="/" className="flex flex-col items-center">
 				<Image src="/logo.svg" alt="logo" width={64} height={64} />
 				<h2 className={cn(museo.className, "text-xl")}>Magic Social</h2>
 			</Link>

@@ -2,8 +2,14 @@ import { Auth } from "@/components/auth";
 import { Logo } from "@/components/logo";
 import { ArrowRight, CheckCircle, Globe } from "lucide-react";
 import Link from "next/link";
+import {auth} from "@clerk/nextjs/server"
+import {redirect} from "next/navigation"
 
 export default function Home() {
+	const {userId} = auth()
+	if (userId){
+		redirect("/dashboard")
+	}
 	return (
 		<div className="flex flex-col min-h-screen">
 			<header className="px-4 mt-5 lg:px-6 h-14 flex items-center">
