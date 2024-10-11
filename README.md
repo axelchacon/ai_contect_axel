@@ -38,3 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 #### npx shadcn@latest init
 
 #### npm install @clerk/nextjs
+
+#### npm install react-icons --save
+
+#### npx shadcn@latest add button
