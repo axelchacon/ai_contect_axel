@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import SearcDashboard from "./_components/search-dashboard";
 
 const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
-}
+	return (
+		<div>
+			<SearcDashboard />
+		</div>
+	);
+};
 
-export default Dashboard
+export default Dashboard;

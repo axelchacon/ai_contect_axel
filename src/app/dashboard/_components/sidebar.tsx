@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
 import { Logo } from "@/components/logo";
 import { CreditCard, History, WandSparkles } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const menulist = [
 	{
@@ -22,6 +25,8 @@ const menulist = [
 ];
 
 const Sidebar = () => {
+	const path = usePathname();
+	console.log("pathh", path);
 	return (
 		<div className="p-5 bg-white h-[800px] flex flex-col">
 			<Logo />
@@ -30,7 +35,10 @@ const Sidebar = () => {
 					<Link
 						key={menu.name}
 						href={menu.path}
-						className="flex mb-2 items-center gap-2 hover:bg-primary hover:text-white cursor-pointer p-3 rounded-lg">
+						className={cn(
+							"flex mb-2 items-center gap-2 hover:bg-primary hover:text-white cursor-pointer p-3 rounded-lg",
+							path === menu.path && "bg-primary text-white"
+						)}>
 						<menu.icon className="w-6 h-6"></menu.icon>
 						<h2 className="text-lg">{menu.name}</h2>
 					</Link>
