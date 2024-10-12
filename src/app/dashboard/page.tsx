@@ -9,7 +9,7 @@ const Dashboard = () => {
 	return (
 		<div>
 			<SearchDashboard onSearchInput={setSearchInput} />
-			<TemplateList searchInput={searchInput} />
+			<TemplateList searchInput={searchInput as string} />
 		</div>
 	);
 };
