@@ -15,7 +15,7 @@ const CategoryItem = ({ name, value }: CategoryProps) => {
 
 	///localhost:3000/dashboard?category=Youtube
 	const handleOnClick = () => {
-		const url = qs.stringify(
+		const url = qs.stringifyUrl(
 			{
 				url: pathname,
 				query: {

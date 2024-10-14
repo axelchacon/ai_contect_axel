@@ -1,10 +1,26 @@
 "use client";
 import { contentTemplates } from "@/lib/content-template";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const TemplateList = ({ searchInput }: { searchInput: string | undefined }) => {
 	const [templateList, setTemplateList] = useState(contentTemplates);
+	const searchParams = useSearchParams();
+	const searchCategory = searchParams.get("category");
+	// console.log("search params in template list", searchCategory);
+	useEffect(() => {
+		if (searchCategory === "All") {
+			setTemplateList(contentTemplates);
+		} else if (searchCategory) {
+			const filteredTemplates = contentTemplates.filter(
+				(item) => item.category === searchCategory
+			);
+			setTemplateList(filteredTemplates);
+		} else {
+			setTemplateList(contentTemplates);
+		}
+	}, [searchCategory]);
 	useEffect(() => {
 		if (searchInput && searchInput.length > 2) {
 			const filteredTemplates = contentTemplates.filter((item) =>
