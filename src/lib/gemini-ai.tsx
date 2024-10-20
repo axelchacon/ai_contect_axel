@@ -1,7 +1,18 @@
 // Make sure to include these imports:
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import dotenv from "dotenv";
+dotenv.config();
 
-const apikey = `AIzaSyCYVDVDaLJSL7m5ZjkBX-1ba0pui9qxp-A`;
+// Usar la variable de entorno para obtener la API key
+const apikey = "AIzaSyCYVDVDaLJSL7m5ZjkBX-1ba0pui9qxp-A";
+if (!apikey) {
+	throw new Error(
+		"API key not found. Make sure you have set GEMINI_API_KEY in your .env file."
+	);
+}
+
+// const apikey = `${process.env.GEMINI_API_KEY}`;
+//const apikey = "AIzaSyCYVDVDaLJSL7m5ZjkBX-1ba0pui9qxp-A";
 const genAI = new GoogleGenerativeAI(apikey);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const generationConfig = {

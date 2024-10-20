@@ -32,7 +32,7 @@ const TemplatePage = ({ params }: { params: templateSlugProps }) => {
 			const finalAIPrompt = JSON.stringify(dataSet) + ", " + selectedPrompt;
 			const result = await chatSession.sendMessage(finalAIPrompt);
 			setAIOutput(result.response.text());
-			console.log(setAIOutput);
+
 			setisLoading(false);
 		} catch (error) {
 			console.log(error);
