@@ -64,3 +64,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ### npx prisma db push
 
 ### npm i axios
+
+### npx shadcn@latest add table
+
+### npm i date-fns --save-dev
