@@ -50,3 +50,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 #### npx shadcn@latest add textarea
 
 #### npx shadcn@latest add input
+
+#### npm install @google/generative-ai
