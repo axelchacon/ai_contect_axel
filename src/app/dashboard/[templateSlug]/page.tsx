@@ -6,6 +6,7 @@ import { contentTemplates } from "@/lib/content-template";
 import { Loader } from "lucide-react";
 import React, { useState } from "react";
 import Editor from "./_components/editor";
+import axios from "axios";
 
 import { chatSession } from "@/lib/gemini-ai";
 
@@ -28,10 +29,17 @@ const TemplatePage = ({ params }: { params: templateSlugProps }) => {
 				title: formData.get("title"),
 				description: formData.get("description"),
 			};
+
 			const selectedPrompt = selectedTemplate?.aiPrompt;
 			const finalAIPrompt = JSON.stringify(dataSet) + ", " + selectedPrompt;
 			const result = await chatSession.sendMessage(finalAIPrompt);
 			setAIOutput(result.response.text());
+			const response = await axios.post("/api/", {
+				title: dataSet.title,
+				description: result.response.text(),
+				templateUsed: selectedTemplate?.name,
+			});
+			console.log("response: " + response);
 
 			setisLoading(false);
 		} catch (error) {

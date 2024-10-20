@@ -54,3 +54,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 #### npm install @google/generative-ai
 
 ### npm install dotenv
+
+### npx prisma generate
+
+### npx prisma init
+
+### npx prisma generate
+
+### npx prisma db push
+
+### npm i axios
