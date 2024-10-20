@@ -68,3 +68,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ### npx shadcn@latest add table
 
 ### npm i date-fns --save-dev
+
+### npx shadcn@latest add card
