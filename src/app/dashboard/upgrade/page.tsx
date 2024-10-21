@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
 	Card,
@@ -9,8 +10,14 @@ import {
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Upgrade = () => {
+	const router = useRouter();
+	const handleOnClick = async () => {
+		const response = await axios.post("/api/upgrade/checkout");
+	};
 	return (
 		<div className="mx-5 py-2">
 			<div className="mt-5 py-6 px-4 bg-white rounded">
@@ -34,7 +41,9 @@ const Upgrade = () => {
 								<Check></Check> Retain All History
 							</p>
 						</div>
-						<Button className="mt-5">Purchase</Button>
+						<Button className="mt-5" onClick={handleOnClick}>
+							Purchase
+						</Button>
 					</CardContent>
 				</Card>
 			</div>
