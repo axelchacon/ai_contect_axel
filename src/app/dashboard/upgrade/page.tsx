@@ -17,6 +17,7 @@ const Upgrade = () => {
 	const router = useRouter();
 	const handleOnClick = async () => {
 		const response = await axios.post("/api/upgrade/checkout");
+		router.push(response.data.url);
 	};
 	return (
 		<div className="mx-5 py-2">
