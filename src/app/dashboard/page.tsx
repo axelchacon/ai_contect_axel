@@ -5,7 +5,7 @@ import TemplateList from "./_components/temple-list";
 
 const Dashboard = () => {
 	const [searchInput, setSearchInput] = useState<string>();
-	console.log(searchInput);
+	// console.log(searchInput);
 	return (
 		<div>
 			<SearchDashboard onSearchInput={setSearchInput} />

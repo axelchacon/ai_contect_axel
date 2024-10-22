@@ -18,12 +18,12 @@ export async function POST(req: Request) {
 			{
 				quantity: 1,
 				price_data: {
-					currency: "usd",
+					currency: "USD",
 					product_data: {
 						name: "10,000 AI Credit",
 						description: "all $10 worth of credit",
 					},
-					unit_amount: 10000,
+					unit_amount: 1000,
 				},
 			},
 		];
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
 		});
 		return NextResponse.json({ url: session.url });
 	} catch (error) {
-		console.log(error);
+		//console.log(error);
 		return new NextResponse("Internal Error", { status: 500 });
 	}
 }

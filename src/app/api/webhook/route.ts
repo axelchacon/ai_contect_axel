@@ -9,7 +9,9 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 export async function POST(req: Request) {
 	const body = await req.text();
 	const sig = headers().get("stripe-signature");
+
 	let event;
+
 	try {
 		event = stripe.webhooks.constructEvent(
 			body,
@@ -17,21 +19,25 @@ export async function POST(req: Request) {
 			process.env.STRIPE_WEBHOOK_SECRET!
 		);
 	} catch (error) {
-		console.log(error);
-		return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+		return NextResponse.json({ error: "Invalid Signature" }, { status: 400 });
 	}
+
 	const session = event.data.object as Stripe.Checkout.Session;
 	const userId = session?.metadata?.userId;
-	if (event.type === "checkout.session.completed") {
+
+	if (event.type == "checkout.session.completed") {
 		if (!userId) {
-			return new NextResponse("Invalid session", { status: 40 });
+			console.log("No user");
+			return new NextResponse("Invalid sesison", { status: 400 });
 		}
+
 		try {
 			const findUserByUserID = await db.user.findUnique({
 				where: {
 					userId: userId,
 				},
 			});
+
 			if (!findUserByUserID) {
 				await db.user.create({
 					data: {
@@ -49,12 +55,14 @@ export async function POST(req: Request) {
 					},
 				});
 			}
+			console.log("Ok en user");
 		} catch (error) {
+			console.log("error en user");
+			console.log(error);
 			return new NextResponse("Invalid User not authorized", { status: 500 });
 		}
 	} else {
-		return new NextResponse("Invalid event", { status: 2000 });
+		return new NextResponse("Invalid event", { status: 200 });
 	}
-
 	return new NextResponse("Success", { status: 200 });
 }
