@@ -76,3 +76,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ### segungo: npx prisma generate
 
 ### segungo: npx prisma db push
+
+### npx shadcn@latest add chart
