@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Usar la variable de entorno para obtener la API key
-const apikey = "AIzaSyCYVDVDaLJSL7m5ZjkBX-1ba0pui9qxp-A";
+const apikey = process.env.GEMINI_API_KEY;
 if (!apikey) {
 	throw new Error(
 		"API key not found. Make sure you have set GEMINI_API_KEY in your .env file."
