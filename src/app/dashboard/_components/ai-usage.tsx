@@ -32,7 +32,7 @@ export const AIUsage = async () => {
 		},
 	});
 
-	availableCredit = Number(userCredit?.totalCredit);
+	availableCredit = userCredit ? Number(userCredit?.totalCredit) : 10000;
 	console.log("userUsage", totalUsage);
 	return (
 		<div className="bg-white">
